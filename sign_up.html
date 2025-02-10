@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sigh Up</title>
+    <link rel="stylesheet" href="/navbar.css">
+    <link rel="stylesheet" href="/sign_up.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar__container">
+        <a href="/" id="navbar__logo">BMA</a>
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="/index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/pages/pages/about.html" class="navbar__links">About Us</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/pages/pages/c.html" class="navbar__links">Contact</a>
+            </li>
+            <li class="navbar__item">
+                <a href="/pages/pages/FAQ.html" class="navbar__links">FAQ</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <nav class="navbar__menu">
+
+    </nav>
+    <main>
+        <section>
+            <h2>Create Your Account</h2>
+            <form action="register.php" method="post">
+             
+              <label for="fullname">Full Name:</label>
+              <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+              
+              <label for="email">Email Address:</label>
+              <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+              
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 123 456 7890" required>
+              
+              <label for="password">Password:</label>
+              <input type="password" id="password" name="password" placeholder="Create a password" required>
+              
+              <label for="confirm-password">Confirm Password:</label>
+              <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+          
+              <div class="term">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="/pages/pages/terms.html" target="_blank">Terms and Conditions</a></label>
+              </div>
+          
+              <button type="submit" class="button">Sign Up</button>
+            </form>
+          </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

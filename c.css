@@ -1,0 +1,168 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, #c1c1c1, #4b4e4c);
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+.navbar {
+    background-color: #1f1f1f;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar__menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar__item {
+    margin-left: 1.5rem;
+}
+
+.navbar__links,
+.button {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.navbar__links:hover,
+.button:hover {
+    background-color: white;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+
+main {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 2rem;
+    background: black;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+main:hover {
+    transform: scale(1.02);
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.yov__3 h2 {
+    font-size: 1.8rem;
+    color: #e71321;
+    margin-top: 2rem;
+    text-shadow: 1px 1px 3px rgba(190, 30, 30, 0.1);
+}
+
+/* Bölüm Stilleri */
+.yov {
+    margin-top: 2rem;
+    padding: 2rem;
+    background: #c4c2c2;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(110, 106, 106, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.yov:hover {
+    transform: scale(1.05);
+    background-color: rgb(170, 172, 170);
+}
+
+.yov__2, .yov__3 {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background: #5a5959;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.yov__2:hover, .yov__3:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.yov__2 h1, .yov__3 h2 {
+    color: white;
+}
+
+.yov__3 a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, #272827, #040404);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s ease, transform 0.2s;
+}
+
+.yov__3 a:hover {
+    background: linear-gradient(45deg, #6a1091, #d13071);
+    transform: scale(1.1);
+}
+
+/* Sosyal Medya */
+.yov__3 a {
+    text-align: center;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}

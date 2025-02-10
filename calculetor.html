@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="eg">
+    <body>
+        <div class="boom"> </div>
+        <script type="text/javascript">
+            let calculateBtn = document.querySelector('.container .submit');
+            let loanAmount = document.querySelector('.loan-amount');
+            let monthLyEmi = document.querySelector('.monthly-emi');
+            let monthIncome = document.querySelector('.container table .month-income');
+            let totalPayable = document.querySelector('.container table .eleg-check');
+
+            let computerResults =()=>{
+                let loan_amount_input = document.querySelector('#loan_amount').value;
+                let loan_term_input = document.querySelector('#yr_amount').value;
+                let month_income_input = document.querySelector('#month_income').value;
+                let interest_rate_input = 0.0045;
+                var income_ratio = 0.30
+
+                if(loan_amount_input != null && loan_amount_input > 250){
+                    var month_up = loan_amount_input * loan_term_input * Math.pow((1+interest_rate_input), loan_term_input)
+                    var month_pay = month_up/(Math.pow((1+ loan_term_input),loan_term_input) -1) //demonator
+                    
+                    if (income_ratio*month_income_input>month_up) {
+                        loanAmount.innerHTML = loan_amount_input;
+                        monthLyEm.innerHTML = month_pay.toFixed(2);
+                        totalPayable.innerHTML = "Loan Accepted";
+                    }
+                    else{
+                        document.write("Loan denied: Monthly payment exceeds 30% of your income.");
+                    }
+                }
+                else{
+                    if (loan_amount<250){
+                        alert("A minimum amount for loan is 250$!")
+                    }
+                    else{
+                        alert("You must introduce a value!")
+                    }
+                }
+                calculateBtn.addEventListener('click', computeResults)
+            }
+
+        </script>
+    </body>

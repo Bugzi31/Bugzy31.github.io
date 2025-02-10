@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMA</title>
+    <!--style>
+        .body {
+            background: url("/images\pic3.jpg");
+            background-size: cover;
+            background-blend-mode: overlay;
+        }
+    </style>-!>
+    <link rel="stylesheet" href="style copy.css">
+
+    <!- <link rel="stylesheet" href= https://fontawesome.com/icons/shield-halved?f=classic&s=solid>-->
+</head>
+<body>
+    <div class="main__img--contaier">
+        <img src="images/gpt_logo_bma_Small-removebg-preview.png"
+         alt="pic" id="img">
+    </div>
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">
+                <i class="fas fa-gem"></i> BMA
+            </a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/pages/pages/about.html" class="navbar__links">
+                        About Us
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/pages/c.html" class="navbar__links">
+                        Contact Us
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/pages/pages/services.html" class="navbar__links">
+                        Services
+                    </a>
+                </li>
+                <li class="navbar__bth">
+                    <a href="/pages/pages/sign_up.html" class="button">
+                        Sign Up 
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  
+
+    <div class="services">
+        <div class="call">
+          <h1>Mortgage Calculator</h1>
+          <div class="call2">
+            <h2>Loan Amount</h2>
+            <input type="number" placeholder="Enter loan amount" id="loan_amount">
+            <h3>Loan Term</h3>
+            <input type="number" placeholder="Enter loan term (years)" id="year_income">
+            <h4>Monthly Income</h4>
+            <input type="number" placeholder="Enter your monthly income" id="month_income">
+            <button class="ccc">Calculate</button>
+            <h2 class="month_pay"><span id="month_pay"></span></h2>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script> 
+
+    <script type="text/javascript">
+        let calculateBtn = document.querySelector('.ccc');
+        let loanAmount = document.querySelector('#loan_amount');
+        let loanTermInput = document.querySelector('#year_income');
+        let monthIncome = document.querySelector('#month_income'); 
+        let monthPay = document.querySelector('#month_pay'); 
+
+        let computeResults =()=>{
+            let loan_amount_input = parseFloat(loanAmount.value);
+            let loan_term_input = parseFloat(loanTermInput.value) * 12 * 12;
+            let month_income_input = parseFloat(monthIncome.value);
+            let interest_rate_input = 0.045 / 12;
+            var income_ratio = 0.30;
+
+
+            if (loan_amount_input != null && loan_amount_input > 250 && loan_term_input > 0 && month_income_input > 0) {
+                var month_up = loan_amount_input * interest_rate_input * Math.pow((1 + interest_rate_input), loan_term_input) // Numerator part of equation
+                var month_down = (Math.pow((1 + interest_rate_input), loan_term_input) - 1) // Denominator part of equation
+                var month_pay = month_up/month_down
+
+                if (income_ratio*month_income_input > month_pay) {
+                    monthPay.innerHTML = month_pay.toFixed(2);
+                } else {
+                    totalPayable.innerHTML = "Loan Denided";
+                    totalPayable.style.color = "red";
+                }
+            } else {
+                if (loan_amount_input < 250) {
+                    errorTell.innerHTML = "A minimum loan is 250£"
+                    errorTell.style.color = "red"
+                } else {
+                    monthlyEmi.innerHTML = ""
+                }
+            }
+        }
+        calculateBtn.addEventListener('click', computeResults)
+    </script>
+</body>
+</html>
